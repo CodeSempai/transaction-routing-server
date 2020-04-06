@@ -5,7 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brichev/TransactionRoutingServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brichev/TransactionRoutingServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/TransactionRoutingServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/brichev/TransactionRoutingServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/TransactionRoutingServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/database/MongoConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/services/BinVerifier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/templates/CardForm.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +111,7 @@
       <workItem from="1584789707082" duration="812000" />
       <workItem from="1584874798235" duration="3000" />
       <workItem from="1586193345881" duration="40000" />
-      <workItem from="1586198419167" duration="429000" />
+      <workItem from="1586198419167" duration="3044000" />
     </task>
     <servers />
   </component>
