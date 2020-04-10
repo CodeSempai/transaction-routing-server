@@ -12,19 +12,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(path = "/db")
-public class DatabaseController {
-
+public class BankIssuerController {
     @Autowired
     private AccordanceRepository accordanceRepository;
 
     @PostMapping(path = "/add")
-    public @ResponseBody String addNewUAccordance(@RequestParam String bin, @RequestParam String url, @RequestParam String targetName) {
+    public @ResponseBody
+    String addNewAccordance(@RequestParam String bin) {
         Accordance accordance = new Accordance();
         accordance.setBin(bin);
-        accordance.setUrl(url);
-        accordance.setTargetName(targetName);
+        //accordance.setUrl(url);
+        //accordance.setTargetName(targetName);
         accordanceRepository.save(accordance);
         return "Saved";
     }
-
 }
