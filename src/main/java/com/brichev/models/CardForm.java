@@ -1,13 +1,10 @@
-package com.brichev.templates;
+package com.brichev.models;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
 public class CardForm {
-    @Id
+
     private String bin;
     private String cardholderName;
     private String expirationMonth;
