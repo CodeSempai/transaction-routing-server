@@ -4,7 +4,11 @@
     <list default="true" id="96b9c166-6e6b-4b16-b066-e6730198725c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/brichev/controllers/BankIssuerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brichev/controllers/BankIssuerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brichev/repositories/BankIssuerBinRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brichev/repositories/BankIssuerBinRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brichev/repositories/BankIssuerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brichev/repositories/BankIssuerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/controllers/BankIssuerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/brichev/controllers/BankIssuerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/repositories/BankIssuerBinRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/brichev/repositories/BankIssuerBinRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/repositories/BankIssuerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/brichev/repositories/BankIssuerRepository.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -117,7 +121,7 @@
       <workItem from="1586444227215" duration="732000" />
       <workItem from="1586454456574" duration="822000" />
       <workItem from="1586524689742" duration="4757000" />
-      <workItem from="1586531945767" duration="4040000" />
+      <workItem from="1586531945767" duration="11326000" />
     </task>
     <servers />
   </component>
