@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="96b9c166-6e6b-4b16-b066-e6730198725c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brichev/controllers/BankIssuerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brichev/controllers/BankIssuerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brichev/services/BankIssuerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brichev/services/BankIssuerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/controllers/BankIssuerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/brichev/controllers/BankIssuerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/services/BankIssuerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/brichev/services/BankIssuerService.class" afterDir="false" />
     </list>
@@ -118,7 +120,7 @@
       <workItem from="1586454456574" duration="822000" />
       <workItem from="1586524689742" duration="4757000" />
       <workItem from="1586531945767" duration="11398000" />
-      <workItem from="1586605970573" duration="2366000" />
+      <workItem from="1586605970573" duration="4770000" />
     </task>
     <servers />
   </component>

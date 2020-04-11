@@ -1,6 +1,7 @@
 package com.brichev.controllers;
 
 import com.brichev.models.BankIssuerBin;
+import com.brichev.models.EditBankIssuerBin;
 import com.brichev.services.BankIssuerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,14 +29,17 @@ public class BankIssuerController {
         return "Removed " + bankIssuerBin.getId();
     }
 
-    /*
+
+
     @Transactional
     @PostMapping(path = "/edit", consumes = "application/json", produces = "application/json")
-    public String editAccordance(@RequestBody LinkedHashMap editInfo) {
-        bankIssuerService.editBankIssuerBin((int)editInfo.get(0), (BankIssuerBin)editInfo.get(1));
+    public String editAccordance(@RequestBody EditBankIssuerBin editBankIssuerBin) {
+        bankIssuerService.editBankIssuerBin(editBankIssuerBin.getId(), editBankIssuerBin.getNewBankIssuerBin());
         return "Edited";
     }
-     */
+
+
+
 
 
     @GetMapping(path="/getBins")

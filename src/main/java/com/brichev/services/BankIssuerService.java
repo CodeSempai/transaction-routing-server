@@ -7,6 +7,7 @@ import com.brichev.repositories.BankIssuerBinRepository;
 import com.brichev.repositories.BankIssuerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -33,15 +34,22 @@ public class BankIssuerService {
         bankIssuerBinRepository.removeById(bankIssuerBin.getId());
     }
 
-    /*
-    public void editBankIssuerBin(Integer id, BankIssuerBin bankIssuerBin){
+
+    public void editBankIssuerBin(Integer id, BankIssuerBin bankIssuerBin) {
         BankIssuerBin foundBankIssuerBin = bankIssuerBinRepository.findById(id).get();
-        System.out.println(foundBankIssuerBin.getBin() + " " + bankIssuerBin.getBin());
-       // foundBankIssuerBin.setBin(bankIssuerBin.getBin());
-        //foundBankIssuerBin.setBankIssuer(bankIssuerBin.getBankIssuer());
+        BankIssuer bankIssuer = bankIssuerBin.getBankIssuer();
+        List<BankIssuer> bankIssuerList = bankIssuerRepository.findByUrlAndAndTargetName(bankIssuer.getUrl(), bankIssuer.getTargetName());
+        if (bankIssuerList.isEmpty()) {
+            bankIssuerRepository.save(bankIssuerBin.getBankIssuer());
+            foundBankIssuerBin.setBankIssuer(bankIssuerBin.getBankIssuer());
+        } else {
+            foundBankIssuerBin.setBankIssuer(bankIssuerList.get(0));
+        }
+
+        foundBankIssuerBin.setBin(bankIssuerBin.getBin());
 
     }
-     */
+
 
     public Iterable<BankIssuerBin> getAllBins() {
         return bankIssuerBinRepository.findAll();
