@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="96b9c166-6e6b-4b16-b066-e6730198725c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brichev/controllers/BankIssuerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brichev/controllers/BankIssuerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brichev/services/BankIssuerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brichev/services/BankIssuerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/controllers/BankIssuerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/brichev/controllers/BankIssuerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/services/BankIssuerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/brichev/services/BankIssuerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/create.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/create.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/edit.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/edit.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/index.hbs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +47,9 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
   <component name="RunDashboard">

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+    <title>BIN-URL database</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+</head>
+
+<h1 class="text-center">List of accordances</h1>
+<a class="btn btn-primary btn-lg btn-block" href="/create">Add new accordance</a>
+
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+
+    <th>id</th>
+    <th>bin</th>
+    <th>url</th>
+    <th>target place</th>
+    <th>Action</th>
+    <th></th>
+    </thead>
+    {{#each data_}}
+        <tbody>
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.bin}}</td>
+            <td>{{this.url}}</td>
+            <td>{{this.target_name}}</td>
+            <td>
+                <a class="btn btn-primary" href="/edit/{{this.id}}">Edit</a>
+                <form action="delete/{{this.id}}" method="POST" style="display:inline;">
+                    <input class="btn btn-primary" type="submit" value="Delete"/>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    {{/each}}
+</table>
+</body>
+<html>
