@@ -8,6 +8,7 @@ import com.brichev.repositories.BankIssuerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -34,6 +35,10 @@ public class BankIssuerService {
         bankIssuerBinRepository.removeById(bankIssuerBin.getId());
     }
 
+    public void removeBankIssuerBin(Integer id) {
+        bankIssuerBinRepository.removeById(id);
+    }
+
 
     public void editBankIssuerBin(Integer id, BankIssuerBin bankIssuerBin) {
         BankIssuerBin foundBankIssuerBin = bankIssuerBinRepository.findById(id).get();
@@ -47,12 +52,18 @@ public class BankIssuerService {
         }
 
         foundBankIssuerBin.setBin(bankIssuerBin.getBin());
-
     }
 
+    public BankIssuerBin getBinById(Integer id) {
+        return bankIssuerBinRepository.findById(id).get();
+    }
 
     public Iterable<BankIssuerBin> getAllBins() {
         return bankIssuerBinRepository.findAll();
+    }
+
+    public List<BankIssuerBin> getBinsList() {
+        return new ArrayList<>(bankIssuerBinRepository.findAll());
     }
 
 
