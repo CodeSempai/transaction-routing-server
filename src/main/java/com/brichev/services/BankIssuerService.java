@@ -8,6 +8,7 @@ import com.brichev.repositories.BankIssuerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -55,5 +56,12 @@ public class BankIssuerService {
         return bankIssuerBinRepository.findAll();
     }
 
+    public List<BankIssuerBin> getBinsList(){
+        return new ArrayList<>(bankIssuerBinRepository.findAll());
+    }
+
+    public List<BankIssuer> getIssuersByUrlAndName(String url, String targetName){
+        return bankIssuerRepository.findByUrlAndAndTargetName(url, targetName);
+    }
 
 }

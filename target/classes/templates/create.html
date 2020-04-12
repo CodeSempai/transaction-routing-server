@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Add new accordance</title>
     <meta charset="utf-8"/>
@@ -32,26 +32,26 @@
     </style>
 </head>
 <h1 class="text-center">Add new accordance</h1>
-<form method="POST">
+<form th:action="@{/create}" th:object="${createForm}" method="POST">
     <body>
     <div class="form-group row">
         <label class="col-sm-1 col-form-label">BIN</label>
         <div class="col-sm-5">
-            <input name="bin" class="form-control" type="number" value="{{data_.bin}}"/>
+            <input name="bin" class="form-control" type="number" th:field="*{bin}"/>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-1 col-form-label">URL</label>
         <div class="col-sm-5">
-            <input name="url" class="form-control" value="{{data_.url}}"/>
+            <input name="url" class="form-control" th:field="*{url}"/>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-1 col-form-label">NAME</label>
         <div class="col-sm-5">
-            <input name="target_name" class="form-control" value="{{data_.target_name}}"/>
+            <input name="target_name" class="form-control" th:field="*{targetName}"/>
         </div>
     </div>
 
@@ -67,8 +67,4 @@
     </body>
      
 </form>
-
-
-
-
-<html>
+</html>

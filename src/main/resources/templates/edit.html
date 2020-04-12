@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Add new accordance</title>
+        <title>Accordance editor</title>
+        
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <style>
-
         div {
             margin-bottom: 5px;
             margin-left: 50px;
@@ -28,12 +28,15 @@
 
         form {
             margin-left: 300px;
-        }
-    </style>
+        }</style>
 </head>
-<h1 class="text-center">Add new accordance</h1>
-<form method="POST">
-    <body>
+<body>
+
+    <h1 class="text-center">Edit accordance</h1>
+     
+<form action="/edit" method="POST">
+     <input type="hidden" name="id" value="{{data_.id}}"/>
+
     <div class="form-group row">
         <label class="col-sm-1 col-form-label">BIN</label>
         <div class="col-sm-5">
@@ -63,12 +66,8 @@
             <a class="btn btn-primary" href="/">To database</a>
         </div>
     </div>
-
-    </body>
-     
+         
 </form>
-
-
-
-
-<html>
+    
+</body>
+</html>
