@@ -29,10 +29,8 @@
         <td th:utext="${bin.bankIssuer.url}"></td>
         <td th:utext="${bin.bankIssuer.targetName}"></td>
         <td>
-            <a class="btn btn-primary" href="/edit/{{this.id}}">Edit</a>
-            <form action="delete/{{this.id}}" method="POST" style="display:inline;">
-                <input class="btn btn-primary" type="submit" value="Delete"/>
-            </form>
+            <a th:href="@{/edit(bin=${bin.id})}" class="btn btn-primary">Edit</a>
+            <a th:href="@{/delete(bin=${bin.id})}" class="btn btn-primary">Delete</a>
         </td>
     </tr>
     </tbody>

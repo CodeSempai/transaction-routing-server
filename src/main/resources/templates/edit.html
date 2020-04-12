@@ -34,27 +34,27 @@
 
     <h1 class="text-center">Edit accordance</h1>
      
-<form action="/edit" method="POST">
-     <input type="hidden" name="id" value="{{data_.id}}"/>
+<form th:action="@{/edit}" th:object="${webForm}" method="POST">
+     <input type="hidden" name="id" th:field="*{id}"/>
 
     <div class="form-group row">
         <label class="col-sm-1 col-form-label">BIN</label>
         <div class="col-sm-5">
-            <input name="bin" class="form-control" type="number" value="{{data_.bin}}"/>
+            <input name="bin" class="form-control" type="number" th:field="*{bin}"/>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-1 col-form-label">URL</label>
         <div class="col-sm-5">
-            <input name="url" class="form-control" value="{{data_.url}}"/>
+            <input name="url" class="form-control" th:field="*{url}"/>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-1 col-form-label">NAME</label>
         <div class="col-sm-5">
-            <input name="target_name" class="form-control" value="{{data_.target_name}}"/>
+            <input name="target_name" class="form-control" th:field="*{targetName}"/>
         </div>
     </div>
 
