@@ -36,7 +36,14 @@ public class BankIssuerService {
     }
 
     public void removeBankIssuerBin(Integer id) {
+        BankIssuerBin bankIssuerBin = bankIssuerBinRepository.findById(id).get();
+        List<BankIssuer> bankIssuerList = bankIssuerRepository.findByUrlAndAndTargetName(bankIssuerBin.getBankIssuer().getUrl(),
+                bankIssuerBin.getBankIssuer().getUrl());
+        if(bankIssuerList.size() == 1){
+            bankIssuerRepository.removeById(bankIssuerBin.getBankIssuer().getId());
+        }
         bankIssuerBinRepository.removeById(id);
+
     }
 
 
