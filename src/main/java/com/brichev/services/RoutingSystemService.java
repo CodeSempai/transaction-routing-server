@@ -33,9 +33,8 @@ public class RoutingSystemService {
         ObjectMapper objectMapper = new ObjectMapper();
         BankIssuer bankIssuer = this.getBankIssuerByBIN(paymentInfo.getCard().getBin());
         assert bankIssuer != null;
-        String response = this.restClientService.post(bankIssuer.getUrl(), objectMapper.writeValueAsString(paymentInfo));
 
-        return response;
+        return this.restClientService.post(bankIssuer.getUrl(), objectMapper.writeValueAsString(paymentInfo));
     }
 
 }
