@@ -5,6 +5,7 @@ import com.brichev.models.EditBankIssuerBin;
 import com.brichev.services.BankIssuerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import javax.transaction.Transactional;
 
 
@@ -30,7 +31,6 @@ public class BankIssuerController {
     }
 
 
-
     @Transactional
     @PostMapping(path = "/edit", consumes = "application/json", produces = "application/json")
     public String editAccordance(@RequestBody EditBankIssuerBin editBankIssuerBin) {
@@ -39,10 +39,10 @@ public class BankIssuerController {
     }
 
 
-
-    @GetMapping(path="/getBins")
-    public @ResponseBody Iterable<BankIssuerBin> getBins() {
-      return bankIssuerService.getAllBins();
+    @GetMapping(path = "/getBins")
+    public @ResponseBody
+    Iterable<BankIssuerBin> getBins() {
+        return bankIssuerService.getAllBins();
     }
 
 

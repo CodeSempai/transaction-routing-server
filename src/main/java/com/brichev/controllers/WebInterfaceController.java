@@ -19,7 +19,7 @@ public class WebInterfaceController {
     @Autowired
     private BankIssuerService bankIssuerService;
 
-    private BankIssuerBin createFromWebForm(WebForm webForm){
+    private BankIssuerBin createFromWebForm(WebForm webForm) {
         BankIssuerBin bankIssuerBin = new BankIssuerBin();
         bankIssuerBin.setBin(webForm.getBin());
         bankIssuerBin.setBankIssuer(new BankIssuer());
@@ -48,7 +48,7 @@ public class WebInterfaceController {
     }
 
     @RequestMapping(value = {"/edit"}, method = RequestMethod.GET)
-    public String showEditPage(Model model, @ModelAttribute("bin") Integer id){
+    public String showEditPage(Model model, @ModelAttribute("bin") Integer id) {
         BankIssuerBin bankIssuerBin = bankIssuerService.getBinById(id);
         WebForm webForm = new WebForm(bankIssuerBin);
         webForm.setId(id);
@@ -65,7 +65,7 @@ public class WebInterfaceController {
 
     @Transactional
     @RequestMapping(value = {"/delete"}, method = RequestMethod.GET)
-    public String delete(Model model, @ModelAttribute("bin") Integer id){
+    public String delete(Model model, @ModelAttribute("bin") Integer id) {
         bankIssuerService.removeBankIssuerBin(id);
         return "redirect:/";
     }

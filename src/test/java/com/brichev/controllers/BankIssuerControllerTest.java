@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -37,13 +38,20 @@ class BankIssuerControllerTest {
 
     private final BankIssuerBin bankIssuerBin;
 
-    BankIssuerControllerTest(){
+    BankIssuerControllerTest() {
         bankIssuerBin = new BankIssuerBin();
         bankIssuerBin.setBin("12345");
         BankIssuer bankIssuer = new BankIssuer();
         bankIssuer.setUrl("www.test.com");
         bankIssuer.setTargetName("test");
         bankIssuerBin.setBankIssuer(bankIssuer);
+    }
+
+    @Test
+    void injectedComponentsAreNotNull() {
+        assertThat(bankIssuerRepository).isNotNull();
+        assertThat(bankIssuerBinRepository).isNotNull();
+        assertThat(bankIssuerService).isNotNull();
     }
 
     @Test
@@ -56,7 +64,7 @@ class BankIssuerControllerTest {
 
     @Test
     void removeAccordance() throws Exception {
-        List <BankIssuer> bankIssuerList = new ArrayList<>();
+        List<BankIssuer> bankIssuerList = new ArrayList<>();
         bankIssuerList.add(bankIssuerBin.getBankIssuer());
         given(bankIssuerBinRepository.findById(bankIssuerBin.getId())).willReturn(java.util.Optional.of(new BankIssuerBin()));
         given(bankIssuerRepository.findByUrlAndAndTargetName(bankIssuerBin.getBankIssuer().getUrl(),
