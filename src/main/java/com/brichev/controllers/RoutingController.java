@@ -20,7 +20,7 @@ public class RoutingController {
     RoutingSystemService routingSystemService;
 
     @PostMapping(path = "/proceed", consumes = "application/json", produces = "application/json")
-    public String payment(@RequestBody PaymentInfo paymentInfo) throws JsonProcessingException {
+    public String routing(@RequestBody PaymentInfo paymentInfo) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.writeValueAsString(routingSystemService.sendRequestToIssuer(paymentInfo));
     }

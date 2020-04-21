@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="96b9c166-6e6b-4b16-b066-e6730198725c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brichev/repositories/BankIssuerBinRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brichev/repositories/BankIssuerBinRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/brichev/services/BankIssuerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brichev/services/BankIssuerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/transactionRoutingServer.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/repositories/BankIssuerBinRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/brichev/repositories/BankIssuerBinRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/services/BankIssuerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/brichev/services/BankIssuerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brichev/controllers/RoutingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brichev/controllers/RoutingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/brichev/services/RoutingSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/brichev/services/RoutingSystemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/brichev/controllers/BankIssuerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/brichev/controllers/BankIssuerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/controllers/RoutingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/brichev/controllers/RoutingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/brichev/services/RoutingSystemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/brichev/services/RoutingSystemService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/brichev/controllers/BankIssuerControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/brichev/controllers/BankIssuerControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +127,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RoutingControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="transactionRoutingServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.brichev.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.brichev.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.brichev.controllers.RoutingControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TransactionRoutingServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="transactionRoutingServer" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.brichev.TransactionRoutingServer" />
@@ -146,6 +161,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BankIssuerControllerTest" />
+        <item itemvalue="JUnit.RoutingControllerTest" />
         <item itemvalue="JUnit.BankIssuerServiceTest" />
       </list>
     </recent_temporary>
@@ -175,7 +191,7 @@
       <workItem from="1586700727870" duration="201000" />
       <workItem from="1586701004357" duration="12225000" />
       <workItem from="1586724894514" duration="348000" />
-      <workItem from="1587453583017" duration="4793000" />
+      <workItem from="1587453583017" duration="6484000" />
     </task>
     <servers />
   </component>
@@ -211,31 +227,31 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="153" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1586711194727" />
-    <state width="1398" height="243" key="GridCell.Tab.0.bottom" timestamp="1587463016666">
+    <state width="1398" height="243" key="GridCell.Tab.0.bottom" timestamp="1587465137063">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="243" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1587463016666" />
+    <state width="1398" height="243" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1587465137063" />
     <state width="1398" height="243" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1587461590472" />
     <state width="1398" height="243" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1586713965529" />
     <state width="1398" height="243" key="GridCell.Tab.0.bottom/0.23.1440.814@0.23.1440.814" timestamp="1587462977299" />
-    <state width="1398" height="243" key="GridCell.Tab.0.center" timestamp="1587463016665">
+    <state width="1398" height="243" key="GridCell.Tab.0.center" timestamp="1587465137062">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="243" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1587463016665" />
+    <state width="1398" height="243" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1587465137062" />
     <state width="1398" height="243" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1587461590471" />
     <state width="1398" height="243" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1586713965528" />
     <state width="1398" height="243" key="GridCell.Tab.0.center/0.23.1440.814@0.23.1440.814" timestamp="1587462977298" />
-    <state width="1398" height="243" key="GridCell.Tab.0.left" timestamp="1587463016665">
+    <state width="1398" height="243" key="GridCell.Tab.0.left" timestamp="1587465137062">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="243" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1587463016665" />
+    <state width="1398" height="243" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1587465137062" />
     <state width="1398" height="243" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1587461590470" />
     <state width="1398" height="243" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1586713965527" />
     <state width="1398" height="243" key="GridCell.Tab.0.left/0.23.1440.814@0.23.1440.814" timestamp="1587462977297" />
-    <state width="1398" height="243" key="GridCell.Tab.0.right" timestamp="1587463016666">
+    <state width="1398" height="243" key="GridCell.Tab.0.right" timestamp="1587465137063">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="243" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1587463016666" />
+    <state width="1398" height="243" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1587465137063" />
     <state width="1398" height="243" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1587461590472" />
     <state width="1398" height="243" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1586713965528" />
     <state width="1398" height="243" key="GridCell.Tab.0.right/0.23.1440.814@0.23.1440.814" timestamp="1587462977298" />
@@ -267,10 +283,10 @@
       <screen x="0" y="23" width="1440" height="814" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.814@0.23.1440.814" timestamp="1587455373741" />
-    <state x="499" y="207" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1587455312885">
+    <state x="499" y="207" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1587463224984">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="499" y="207" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1440.900@0.0.1440.900" timestamp="1587455312885" />
+    <state x="499" y="207" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1440.900@0.0.1440.900" timestamp="1587463224984" />
     <state x="458" y="205" key="extract.method.dialog" timestamp="1586711127452">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

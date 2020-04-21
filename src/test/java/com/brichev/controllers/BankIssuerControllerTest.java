@@ -3,6 +3,7 @@ package com.brichev.controllers;
 import com.brichev.models.BankIssuer;
 import com.brichev.models.BankIssuerBin;
 import com.brichev.repositories.BankIssuerBinRepository;
+import com.brichev.repositories.BankIssuerRepository;
 import com.brichev.services.BankIssuerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -13,16 +14,17 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(BankIssuerController.class)
-@Transactional(propagation = Propagation.NOT_SUPPORTED)
 class BankIssuerControllerTest {
     @Autowired
     private MockMvc mvc;
@@ -30,6 +32,8 @@ class BankIssuerControllerTest {
     BankIssuerService bankIssuerService;
     @MockBean
     BankIssuerBinRepository bankIssuerBinRepository;
+    @MockBean
+    BankIssuerRepository bankIssuerRepository;
 
     private final BankIssuerBin bankIssuerBin;
 
@@ -52,6 +56,11 @@ class BankIssuerControllerTest {
 
     @Test
     void removeAccordance() throws Exception {
+        List <BankIssuer> bankIssuerList = new ArrayList<>();
+        bankIssuerList.add(bankIssuerBin.getBankIssuer());
+        given(bankIssuerBinRepository.findById(bankIssuerBin.getId())).willReturn(java.util.Optional.of(new BankIssuerBin()));
+        given(bankIssuerRepository.findByUrlAndAndTargetName(bankIssuerBin.getBankIssuer().getUrl(),
+                bankIssuerBin.getBankIssuer().getTargetName())).willReturn(bankIssuerList);
         this.mvc.perform(post("/delete")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(toJsonString((bankIssuerBin))))
@@ -61,6 +70,11 @@ class BankIssuerControllerTest {
     @Test
     void getBins() throws Exception {
         this.mvc.perform(get("/")).andExpect(status().isOk());
+        given(bankIssuerService.getAllBins()).willReturn(new ArrayList<>());
+        mvc.perform(get("/getBins"))
+                .andExpect(status().isOk())
+                .andExpect(content()
+                        .contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
     }
 
 
