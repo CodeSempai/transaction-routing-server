@@ -8,4 +8,5 @@ import java.util.Optional;
 public interface BankIssuerBinRepository extends JpaRepository<BankIssuerBin, Integer> {
     Long removeById(Integer id);
     Optional<BankIssuerBin> findById(Integer id);
+    Long countAllByBin(String bin);
 }

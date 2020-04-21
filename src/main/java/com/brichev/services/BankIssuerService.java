@@ -73,5 +73,8 @@ public class BankIssuerService {
         return new ArrayList<>(bankIssuerBinRepository.findAll());
     }
 
+    public Long countByBin(String bin){
+        return bankIssuerBinRepository.countAllByBin(bin);
+    }
 
 }

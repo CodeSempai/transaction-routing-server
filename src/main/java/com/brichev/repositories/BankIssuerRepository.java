@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface BankIssuerRepository extends JpaRepository<BankIssuer, Integer> {
     List<BankIssuer> findByUrlAndAndTargetName(String url, String targetName);
-    Long removeById(Integer id);
+    void removeById(Integer id);
 }
