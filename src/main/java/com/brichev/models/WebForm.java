@@ -1,6 +1,5 @@
 package com.brichev.models;
 
-import com.brichev.models.BankIssuerBin;
 
 public class WebForm {
     private Integer id;

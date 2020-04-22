@@ -3,9 +3,9 @@ package com.brichev.models;
 import javax.persistence.*;
 
 @Entity
-public class BankIssuer{
+public class BankIssuer {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String url;

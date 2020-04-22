@@ -36,7 +36,7 @@ CREATE TABLE `bank_issuer` (
 
 LOCK TABLES `bank_issuer` WRITE;
 /*!40000 ALTER TABLE `bank_issuer` DISABLE KEYS */;
-INSERT INTO `bank_issuer` VALUES (3,NULL,'www.yandex.ru'),(5,'google','www.google.com'),(7,'google','www.google.com'),(12,'yandex','www.yandex.ru'),(18,'test','www.test.ru'),(19,'okey','works.com'),(21,'test','www.test.com'),(24,'ban','tony.com'),(26,'yandexx','www.yandex.ru'),(27,'ga','www'),(29,'testttttt','www.test.ru'),(30,'testes','www.test.ru'),(31,'testes','www.test.com'),(32,'w','w');
+INSERT INTO `bank_issuer` VALUES (58,'test','www.test.com'),(65,'okey','www.test.com'),(66,'okey','tony.com'),(68,'work','works.com');
 /*!40000 ALTER TABLE `bank_issuer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +63,7 @@ CREATE TABLE `bank_issuer_bin` (
 
 LOCK TABLES `bank_issuer_bin` WRITE;
 /*!40000 ALTER TABLE `bank_issuer_bin` DISABLE KEYS */;
-INSERT INTO `bank_issuer_bin` VALUES (10,'1515',5),(11,'564112',5),(17,'90902',31),(23,'18484141',21),(25,'9999',5),(35,'2',27);
+INSERT INTO `bank_issuer_bin` VALUES (55,'1848',58),(63,'56431231313',65),(67,'5431128451117777',66),(69,'1441414141441',68);
 /*!40000 ALTER TABLE `bank_issuer_bin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +85,7 @@ CREATE TABLE `hibernate_sequence` (
 
 LOCK TABLES `hibernate_sequence` WRITE;
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (36);
+INSERT INTO `hibernate_sequence` VALUES (70);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -98,4 +98,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-13 13:25:30
+-- Dump completed on 2020-04-21 18:54:27

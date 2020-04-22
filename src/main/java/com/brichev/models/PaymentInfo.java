@@ -1,7 +1,6 @@
 package com.brichev.models;
 
 
-
 public class PaymentInfo {
 
     private CardForm card;

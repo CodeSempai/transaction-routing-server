@@ -8,8 +8,10 @@ import com.brichev.repositories.BankIssuerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BankIssuerService {
@@ -22,7 +24,8 @@ public class BankIssuerService {
 
     public void saveBankIssuerBin(BankIssuerBin bankIssuerBin) {
         BankIssuer bankIssuer = bankIssuerBin.getBankIssuer();
-        List<BankIssuer> bankIssuerList = bankIssuerRepository.findByUrlAndAndTargetName(bankIssuer.getUrl(), bankIssuer.getTargetName());
+        List<BankIssuer> bankIssuerList = bankIssuerRepository
+                .findByUrlAndAndTargetName(bankIssuer.getUrl(), bankIssuer.getTargetName());
         if (bankIssuerList.isEmpty()) {
             bankIssuerRepository.save(bankIssuerBin.getBankIssuer());
         } else {
@@ -32,37 +35,52 @@ public class BankIssuerService {
     }
 
     public void removeBankIssuerBin(BankIssuerBin bankIssuerBin) {
-        bankIssuerBinRepository.removeById(bankIssuerBin.getId());
+        removeBankIssuerBin(bankIssuerBin.getId());
+    }
+
+    private void removeBankIssuer(BankIssuer bankIssuer) {
+        List<BankIssuerBin> bankIssuerBinList = bankIssuerBinRepository
+                .findAllByBankIssuer(bankIssuer);
+        if (bankIssuerBinList.size() == 0) {
+            bankIssuerRepository.removeById(bankIssuer.getId());
+        }
     }
 
     public void removeBankIssuerBin(Integer id) {
-        BankIssuerBin bankIssuerBin = bankIssuerBinRepository.findById(id).get();
-        List<BankIssuer> bankIssuerList = bankIssuerRepository.findByUrlAndAndTargetName(bankIssuerBin.getBankIssuer().getUrl(),
-                bankIssuerBin.getBankIssuer().getUrl());
-        if (bankIssuerList.size() == 1) {
-            bankIssuerRepository.removeById(bankIssuerBin.getBankIssuer().getId());
+        Optional<BankIssuerBin> optional = bankIssuerBinRepository.findById(id);
+        if (optional.isPresent()) {
+            BankIssuerBin bankIssuerBin = optional.get();
+            bankIssuerBinRepository.removeById(id);
+            removeBankIssuer(bankIssuerBin.getBankIssuer());
         }
-        bankIssuerBinRepository.removeById(id);
 
     }
 
 
     public void editBankIssuerBin(Integer id, BankIssuerBin bankIssuerBin) {
-        BankIssuerBin foundBankIssuerBin = bankIssuerBinRepository.findById(id).get();
-        BankIssuer bankIssuer = bankIssuerBin.getBankIssuer();
-        List<BankIssuer> bankIssuerList = bankIssuerRepository.findByUrlAndAndTargetName(bankIssuer.getUrl(), bankIssuer.getTargetName());
-        if (bankIssuerList.isEmpty()) {
-            bankIssuerRepository.save(bankIssuerBin.getBankIssuer());
-            foundBankIssuerBin.setBankIssuer(bankIssuerBin.getBankIssuer());
-        } else {
-            foundBankIssuerBin.setBankIssuer(bankIssuerList.get(0));
-        }
+        Optional<BankIssuerBin> optional = bankIssuerBinRepository.findById(id);
+        if (optional.isPresent()) {
+            BankIssuerBin foundBankIssuerBin = optional.get();
+            BankIssuer bankIssuer = bankIssuerBin.getBankIssuer();
+            BankIssuer previousBankIssuer = foundBankIssuerBin.getBankIssuer();
+            List<BankIssuer> bankIssuerList = bankIssuerRepository
+                    .findByUrlAndAndTargetName(bankIssuer.getUrl(), bankIssuer.getTargetName());
+            if (bankIssuerList.isEmpty()) {
+                bankIssuerRepository.save(bankIssuerBin.getBankIssuer());
+                foundBankIssuerBin.setBankIssuer(bankIssuerBin.getBankIssuer());
+                removeBankIssuer(previousBankIssuer);
+            } else {
+                foundBankIssuerBin.setBankIssuer(bankIssuerList.get(0));
+            }
+            foundBankIssuerBin.setBin(bankIssuerBin.getBin());
 
-        foundBankIssuerBin.setBin(bankIssuerBin.getBin());
+        }
     }
 
     public BankIssuerBin getBinById(Integer id) {
-        return bankIssuerBinRepository.findById(id).get();
+        Optional<BankIssuerBin> optional = bankIssuerBinRepository.findById(id);
+        assert (optional.isPresent());
+        return optional.get();
     }
 
     public Iterable<BankIssuerBin> getAllBins() {
@@ -73,5 +91,8 @@ public class BankIssuerService {
         return new ArrayList<>(bankIssuerBinRepository.findAll());
     }
 
+    public Long countByBin(String bin) {
+        return bankIssuerBinRepository.countAllByBin(bin);
+    }
 
 }
