@@ -2,7 +2,7 @@
 
 git clone https://github.com/tonybricheff/transaction-routing-server.git
 
-./mvn install
+./mvnw install
 
 sudo mysql --password
 
